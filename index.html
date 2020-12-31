@@ -578,7 +578,11 @@ table.CodeRay td.code>pre{padding:0}
 <li><a href="#_quality_scenarios">10.2. Quality Scenarios</a></li>
 </ul>
 </li>
-<li><a href="#section-technical-risks">11. Risks and Technical Debts</a></li>
+<li><a href="#section-technical-risks">11. Risks and Technical Debts</a>
+<ul class="sectlevel2">
+<li><a href="#_redux_persist_is_currently_not_maintained">11.1. redux-persist is currently not maintained</a></li>
+</ul>
+</li>
 <li><a href="#section-glossary">12. Glossary</a></li>
 </ul>
 </div>
@@ -1733,26 +1737,19 @@ more precisely down to a level of scenarios that can be discussed and evaluated.
 <div class="sect1">
 <h2 id="section-technical-risks">11. Risks and Technical Debts</h2>
 <div class="sectionbody">
-<div class="sidebarblock arc42help">
-<div class="content">
+<div class="sect2">
+<h3 id="_redux_persist_is_currently_not_maintained">11.1. redux-persist is currently not maintained</h3>
 <div class="paragraph">
-<div class="title">Contents</div>
-<p>A list of identified technical risks or technical debts, ordered by priority</p>
-</div>
-<div class="paragraph">
-<div class="title">Motivation</div>
-<p>“Risk management is project management for grown-ups” (Tim Lister, Atlantic Systems Guild.)</p>
+<p><a href="https://github.com/rt2zz/redux-persist">redux-persist</a> is a library that we use to continuously persist and to load persisted state. It is used by many but no commits are made and no pull-requests are accepted. This dependency may break in the future.</p>
 </div>
 <div class="paragraph">
-<p>This should be your motto for systematic detection and evaluation of risks and technical debts in the architecture, which will be needed by management stakeholders (e.g. project managers, product owners) as part of the overall risk analysis and measurement planning.</p>
+<p>We currently take this risk because the library is really convenient. It is also decoupled from the actual redux state management. It hooks into it at one central place. That means that the cost of replacing it is not increasing over time.</p>
 </div>
 <div class="paragraph">
-<div class="title">Form</div>
-<p>List of risks and/or technical debts, probably including suggested measures to minimize, mitigate or avoid risks or reduce technical debts.</p>
-</div>
-</div>
+<p>We will thus continue to use it until an actual problem emerges.</p>
 </div>
 <div style="page-break-after: always;"></div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1817,7 +1814,7 @@ more precisely down to a level of scenarios that can be discussed and evaluated.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-12-31 17:49:08 UTC
+Last updated 2020-12-31 17:51:03 UTC
 </div>
 </div>
 </body>
